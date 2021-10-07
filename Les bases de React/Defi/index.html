@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="./style.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.26.0/babel.min.js" integrity="sha512-kp7YHLxuJDJcOzStgd6vtpxr4ZU9kjn77e6dBsivSz+pUuAuMlE2UTdKB7jjsWT84qbS8kdCWHPETnP/ctrFsA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script crossorigin src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
+    
+    
+    <title>Les bases de React</title>
+</head>
+<body>
+    <div id="root">
+    </div>
+    
+    <button id="change-btn">Changer le contenu</button>
+    
+    <script type="text/babel">
+        const rootEl = document.getElementById('root');
+        const changeBtn = document.getElementById('change-btn');
+        
+        changeBtn.addEventListener("click", function(){
+            displayedEl === mood ? displayedEl = image : displayedEl = mood;
+            ReactDOM.render(displayedEl, rootEl)
+        })
+
+        const mood = <div>
+                        <div className="mood-wrapper">
+                            <h1>Humeur du jour</h1>
+                            <h2>Be encouraged, and encourage others</h2>
+                        </div>
+                        
+                    </div>;
+
+         const image =  <div>
+                            <div className="picture-wrapper">
+                                <img src="./photo-1542728498-09c6a1af7cb9.jpeg"></img>
+                            </div>
+                            
+                        </div>;
+       
+        let displayedEl = mood;
+        
+
+        ReactDOM.render(displayedEl, rootEl);
+        
+    </script>
+
+    
+</body>
+</html>
